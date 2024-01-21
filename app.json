@@ -28,6 +28,7 @@
         "plugins": ["expo-router"],
         "experiments": {
             "tsconfigPaths": true
-        }
+        },
+        "scheme": "myapp"
     }
 }
