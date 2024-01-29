@@ -18,6 +18,7 @@ import {
 
 import * as SplashScreen from "expo-splash-screen";
 import AnimatedSplashScreen from "@/components/day4/AnimatedSplashScreen";
+import Animated, { FadeIn } from "react-native-reanimated";
 
 // SplashScreen.preventAutoHideAsync();
 
@@ -45,21 +46,26 @@ export default function RootLayout() {
     if (!fontsLoaded && !fontError) {
         return null;
     }
-    if (!appReady || !splashAnimationFinished) {
-        return (
-            <AnimatedSplashScreen
-                onAnimationFinish={(isCancelled) => {
-                    if (!isCancelled) setSplashAnimationFinished(true);
-                }}
-            />
-        );
-    }
+    const showAnimatedSplash = !appReady || !splashAnimationFinished;
 
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
-            <Stack screenOptions={{}}>
-                <Stack.Screen name="index" options={{ title: "DEVember" }} />
-            </Stack>
+            {showAnimatedSplash ? (
+                <AnimatedSplashScreen
+                    onAnimationFinish={(isCancelled) => {
+                        if (!isCancelled) setSplashAnimationFinished(true);
+                    }}
+                />
+            ) : (
+                <Animated.View style={{ flex: 1 }} entering={FadeIn}>
+                    <Stack screenOptions={{}}>
+                        <Stack.Screen
+                            name="index"
+                            options={{ title: "DEVember" }}
+                        />
+                    </Stack>
+                </Animated.View>
+            )}
         </GestureHandlerRootView>
     );
 }

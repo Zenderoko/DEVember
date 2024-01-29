@@ -1,17 +1,25 @@
 import { View, StyleSheet } from "react-native";
 import React, { useRef } from "react";
 import LottieView from "lottie-react-native";
+import Animated, {
+    FadeIn,
+    FadeOut,
+    ZoomIn,
+    ZoomOut,
+} from "react-native-reanimated";
+const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
 
 const AnimatedSplashScreen = ({
-    onAnimationFinish = () => {},
+    onAnimationFinish = (isCancelled) => {},
 }: {
-    onAnimationFinish: () => void;
+    onAnimationFinish: (isCancelled: boolean) => void;
 }) => {
     const animation = useRef<LottieView>(null);
 
     return (
-        <View style={styles.animationContainer}>
-            <LottieView
+        <Animated.View style={styles.animationContainer}>
+            <AnimatedLottieView
+                exiting={ZoomOut}
                 ref={animation}
                 onAnimationFinish={onAnimationFinish}
                 loop={false}
@@ -24,7 +32,7 @@ const AnimatedSplashScreen = ({
                 // Find more Lottie files at https://lottiefiles.com/featured
                 source={require("@assets/lottie/netflix")}
             />
-        </View>
+        </Animated.View>
     );
 };
 
