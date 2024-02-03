@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "latitude": -42.3790735390517,
+        "longitude": -73.65051813518139,
+        "price": 150,
+        "title": "Vidaliiiitoooo",
+        "numberOfStars": 5,
+        "rating": 4.8,
+        "description": "La mas mejor de las carnicerias yehh",
+        "image": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=F1pJ03ykUCiUa7nRgBnszA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=122.788765&pitch=0&thumbfov=100"
+    },
+    {
+        "id": 2,
+        "latitude": -42.37679575747971,
+        "longitude": -73.6525164315092,
+        "price": 200,
+        "title": "Poto",
+        "numberOfStars": 4,
+        "rating": 4.5,
+        "description": "Aqui voy a poner a titan hasta el fondo",
+
+        "image": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ND2wUIwM0fca3912FRDKkw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=24.592705&pitch=0&thumbfov=100"
+    },
+    {
+        "id": 3,
+        "latitude": -42.380818,
+        "longitude": -73.654983,
+        "price": 120,
+        "title": "Chinos parece?",
+        "numberOfStars": 3,
+        "rating": 4.2,
+        "description": "Comemos aloz con palito",
+        "image": "https://lh5.googleusercontent.com/p/AF1QipPTuUQA9WwLxiy1eKnJIw5ouOp9uPyh1CbtDGhF=w408-h400-k-no"
+    },
+    {
+        "id": 4,
+        "latitude": -42.37730082185648,
+        "longitude": -73.64577464718732,
+        "price": 180,
+        "title": "Café Chilcon",
+        "numberOfStars": 5,
+        "rating": 4.9,
+        "description": "Café random que pille en gugel maps",
+        "image": "https://lh5.googleusercontent.com/p/AF1QipN5m4evCwUZeg990j526kj-ZU2VN9vMqR3DKcTd=w408-h544-k-no"
+    },
+    {
+        "id": 5,
+        "latitude": -42.37602991359203,
+        "longitude": -73.64890700021539,
+        "price": 160,
+        "title": "Casa de la Suegri ",
+        "numberOfStars": 4,
+        "rating": 4.6,
+        "description": "Aqui la lulu esta toa mia",
+        "image": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=E7PtOTDVn_0P6mJZHSQhjQ&cb_client=search.gws-prod.gps&w=408&h=240&yaw=321.85693&pitch=0&thumbfov=100"
+    }
+]
