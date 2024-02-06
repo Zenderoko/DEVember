@@ -37,7 +37,8 @@
     "react-native-screens": "~3.22.0",
     "react-native-vector-icons": "^10.0.3",
     "react-native-web": "~0.19.6",
-    "rehype-raw": "^7.0.0"
+    "rehype-raw": "^7.0.0",
+    "expo-linear-gradient": "~12.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
