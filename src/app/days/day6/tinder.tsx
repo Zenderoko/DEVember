@@ -1,9 +1,16 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import { View, Text, StyleSheet, Button } from "react-native";
+import React, { useEffect, useState } from "react";
 import TinderCard from "@/components/day6/TinderCard";
 import { Stack } from "expo-router";
+import {
+    runOnJS,
+    useAnimatedReaction,
+    useSharedValue,
+    withSpring,
+} from "react-native-reanimated";
+import { GestureDetector, Gesture } from "react-native-gesture-handler";
 
-const users = [
+const dummuUsers = [
     {
         id: 1,
         image: "https://media.istockphoto.com/id/1171698091/es/foto/un-hombre-sosteniendo-su-diario.jpg?s=612x612&w=0&k=20&c=BSn6el4qk2O1NE9FOL0X5WVJUGgArS3NxRkiwbdqsnQ=",
@@ -32,16 +39,43 @@ const users = [
 ];
 
 export default function TinderScreen() {
+    const [users, setUsers] = useState(dummuUsers);
+    const activeIndex = useSharedValue(0);
+    const [index, setIndex] = useState(0);
+
+    useAnimatedReaction(
+        () => activeIndex.value,
+        (value, prevValue) => {
+            if (Math.floor(value) !== index) {
+                runOnJS(setIndex)(Math.floor(value));
+            }
+        }
+    );
+    useEffect(() => {
+        if (index > users.length - 3) {
+            console.warn("Last 2 cards remaining. Fetch more");
+            setUsers((usrs) => [...usrs, ...dummuUsers.reverse()]);
+        }
+    }, [index]);
+
+    const onResponse = (res: boolean) => {
+        console.log("Response", res);
+    };
+
     return (
         <View style={styles.screen}>
             <Stack.Screen options={{ headerShown: false }} />
-
+            <Text style={{ top: 70, position: "absolute" }}>
+                Current index: {index}
+            </Text>
             {users.map((user, index) => (
                 <TinderCard
-                    key={user.id}
+                    key={`${user.id}-${index}`}
                     user={user}
                     numOfCards={users.length}
-                    curIndex={index}
+                    index={index}
+                    activeIndex={activeIndex}
+                    onResponse={onResponse}
                 />
             ))}
         </View>
