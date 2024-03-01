@@ -14,8 +14,8 @@ const DayDetailScreen = () => {
             <Stack.Screen options={{ title: "Day 8: Weather App" }} />
             <MarkDownDisplay>{description}</MarkDownDisplay>
 
-            <Link href="/days/day8/tinder" asChild>
-                <Button title="Go to the Animation" />
+            <Link href="/days/day8/weather" asChild>
+                <Button title="Go to the Weather" />
             </Link>
         </SafeAreaView>
     );
