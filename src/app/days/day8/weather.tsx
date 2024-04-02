@@ -80,8 +80,9 @@ const WeatherScreen = () => {
         }
 
         const results = await fetch(
-            `${BASE_URL}/weather?lat=${location?.coords.latitude}&lon=${location?.coords.longitude}&appid=${OPEN_WEATHER_KEY}&units=metric&lang=fa`
+            `${BASE_URL}/weather?lat=${location?.coords.latitude}&lon=${location?.coords.longitude}&appid=${OPEN_WEATHER_KEY}&units=metric&lang=sp`
         );
+
         const data = await results.json();
         // console.log(JSON.stringify(data, null, 2));
         setWeather(data);

@@ -16,6 +16,10 @@ import {
     AmaticSC_700Bold,
 } from "@expo-google-fonts/amatic-sc";
 
+import { Amplify } from "aws-amplify";
+import amplificonfig from "@/amplifyconfiguration.json";
+Amplify.configure(amplificonfig);
+
 import * as SplashScreen from "expo-splash-screen";
 import AnimatedSplashScreen from "@/components/day4/AnimatedSplashScreen";
 import Animated, { FadeIn } from "react-native-reanimated";
