@@ -14,7 +14,11 @@ const DayDetailScreen = () => {
             <MarkDownDisplay>{description}</MarkDownDisplay>
 
             <Link href="/days/day9/protected" asChild>
-                <Button title="Go to the AuthPage" />
+                <Button title="Go to the Protected Page" />
+            </Link>
+
+            <Link href="/days/day9/auth/sign-in" asChild>
+                <Button title="Go to SignIn" />
             </Link>
         </SafeAreaView>
     );
