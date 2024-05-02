@@ -4,8 +4,7 @@ import { Link, Stack } from "expo-router";
 import MarkDownDisplay from "@/components/day3/MarkDownDisplay";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const description = `
-    # Tinder Animation Testing
+const description = ` # Tinder Animation Testing
     `;
 
 const DayDetailScreen = () => {

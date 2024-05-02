@@ -1,6 +1,8 @@
 {
     "extends": "expo/tsconfig.base",
     "compilerOptions": {
+        "useUnknownInCatchVariables": false,
+        "allowJs": true,
         "strict": true,
         "baseUrl": ".",
         "paths": {
@@ -8,5 +10,7 @@
             "@components/*": ["src/components/*"],
             "@assets/*": ["assets/*"]
         }
-    }
+    },
+    "files": ["src/aws-exports.js"],
+    "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
 }
